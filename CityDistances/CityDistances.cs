@@ -31,19 +31,12 @@ namespace CityDistances
         {
             var i = cities.First;
             var res = 0;
-            string end = default;
+            var end = String.Empty;
             var inRange = false;
 
             while (i != null)
             {
-                if (inRange)
-                {
-                    res += i.Value.Distance;
-
-                    if (i.Value.Name == end)
-                        break;
-                }
-                else
+                if (!inRange)
                 {
                     if (i.Value.Name == cityFrom)
                     {
@@ -55,6 +48,13 @@ namespace CityDistances
                         end = cityFrom;
                         inRange = true;
                     }
+                }
+                else
+                {
+                    res += i.Value.Distance;
+
+                    if (i.Value.Name == end)
+                        break;
                 }
 
                 i = i.Next;
