@@ -8,15 +8,15 @@ namespace StudentsJoural
 {
     class Journal
     {
-        private List<Student> students;
+        private readonly List<Student> students;
         private Dictionary<Student, List<int>> marks;
 
-        public List<Student> Students { get => students; set => students = value; }
+        public List<Student> Students { get => students; }
         internal Dictionary<Student, List<int>> Marks { get => marks; set => marks = value; }
 
         public Journal()
         {
-            Students = new List<Student>();
+            students = Marks.Select(i => i.Key).ToList();
             Marks = new Dictionary<Student, List<int>>();
         }
 
