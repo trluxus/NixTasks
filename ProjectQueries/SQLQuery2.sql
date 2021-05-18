@@ -1,0 +1,6 @@
+CREATE TABLE Rooms(
+	Number INT PRIMARY KEY,
+	Capacity INT NOT NULL,
+	Price MONEY NOT NULL,
+	Class NVARCHAR NOT NULL
+)

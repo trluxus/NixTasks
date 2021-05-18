@@ -1,0 +1,7 @@
+CREATE TABLE Reservations(
+	Id INT PRIMARY KEY,
+	Room INT FOREIGN KEY REFERENCES Rooms(Number),
+	Status NVARCHAR NOT NULL,
+	StartDate DATE NOT NULL,
+	EndDate DATE NOT NULL
+)
